@@ -131,6 +131,8 @@ func compressFile(src string) {
 		return
 	}
 
+	header.Method = zip.Deflate
+
 	writer, err := zipWriter.CreateHeader(header)
 	if err != nil {
 		return
